@@ -2,26 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    gap: 16px;
+
+    min-height: 100vh;
+    background-color: #f6f5f4;
+    padding: 16px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.calendar{
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 100px);
+    width: fit-content;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    border: 5px solid #38a69e;
+    background-position: center;
+
+}
+
+.day{
+    height: 100px;
+    width: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000000af;
+    font-size: 3.5rem;
+    border: 1px solid #fff;
+
+}
+
+.day:hover{
+    background-color: rgba(255, 255, 255, 0.212);
+    cursor: pointer;
+}
+
+.open{
+    color: #ffffff49;
+    border: 15px inset #5f4a2f;
+    background: linear-gradient(-45deg, #3b2b14, #5f4a2f);
+}
+
+.content{
+    background-color: #ebebeb;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #0000001f;
 }
